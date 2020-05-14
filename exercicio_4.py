@@ -5,9 +5,7 @@ from funcs_uteis import decode_url, preencher_form
 
 dict_from_url = {}
 
-path = r"C:\Users\Public\Downloads\geckodriver.exe"
-
-nav = webdriver.Firefox(executable_path=path)
+nav = webdriver.Firefox()
 
 nav.get('https://selenium.dunossauro.live/exercicio_04.html')
 
@@ -35,3 +33,7 @@ for par in lista_desejada:
 dict_from_result = eval(nav.find_element_by_tag_name('textarea').text)
 
 assert dict_from_url == dict_from_result
+
+print('terminou com sucesso')
+
+nav.close()

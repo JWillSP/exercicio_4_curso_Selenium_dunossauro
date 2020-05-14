@@ -191,10 +191,9 @@ def decode_url(text_url):
     """
 
     url_code = {
-        code:char
+        code: char
         for char, code
         in re.findall("      ([^\s]+)              ([^\s]+)",table)}
-    print(url_code)
 
     for code in re.findall('%\w\w', text_url):
         text_url = text_url.replace(code, url_code[code])
